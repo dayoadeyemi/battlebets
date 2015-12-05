@@ -6,7 +6,7 @@ var port = (process.env.PORT || 1251);
 var app = express();
 
 console.log("START >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-console.log(__dirname);
+console.log("|||||||||||||||||      " + __dirname);
 
 app.use(express.static(path.join(__dirname +'/public/')));
 
