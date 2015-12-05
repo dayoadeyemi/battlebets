@@ -4,15 +4,15 @@ var express = require("express"),
     path = require("path"),
     http = require("http"),
     port = (process.env.PORT || 1251),
-    __dirname = path.resolve(path.dirname()),
     server = module.exports = express();
 
 // SERVER CONFIGURATION
 // ====================
 server.configure(function() {
   console.log("Starting up");
+  console.log(process.cwd());
   console.log(__dirname);
-  server.use(express["static"](__dirname + "/../public"));
+  server.use(express["static"](process.cwd() + "/public"));
 
 
 
