@@ -5,8 +5,7 @@
   "description": "hackathon app for tech crunch london 2015",
   "homepage": "devpost.com/software/battlebets/",
   "engines": {
-    "node": "5.1.1",
-    "npm": "3.3.12"
+    "node": "5.1.1"
   },
   "author": {
     "name": "Bruce",

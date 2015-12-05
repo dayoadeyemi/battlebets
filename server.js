@@ -1,6 +1,7 @@
 // DEPENDENCIES
 // ============
 var express = require('express');
+var path = require('path');
 var port = (process.env.PORT || 1251);
 var app = express();
 
