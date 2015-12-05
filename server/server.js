@@ -2,7 +2,7 @@
 // ============
 var express = require("express"),
     http = require("http"),
-    port = (process.env.PORT || 8080),
+    port = (process.env.PORT || 1251),
     server = module.exports = express();
 
 // SERVER CONFIGURATION

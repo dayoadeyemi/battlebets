@@ -33,7 +33,7 @@
     "Battlebets"
   ],
   "devDependencies": {
-    "express": "3.x",
+    "express": "4.13.3",
     "grunt": "~0.4.1",
     "grunt-contrib-requirejs": "~0.4.0",
     "grunt-contrib-jshint": "~0.3.0",
@@ -52,8 +52,5 @@
   },
   "scripts": {
     "start": "node server/server.js"
-  },
-  "dependencies": {
-    "express": "^3.21.2"
   }
 }
