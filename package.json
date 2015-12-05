@@ -2,14 +2,16 @@
   "name": "Battlebets",
   "title": "Battlebets",
   "version": "0.0.1",
-  "homepage": "",
+  "description": "hackathon app for tech crunch london 2015",
+  "homepage": "devpost.com/software/battlebets/",
   "engines": {
-    "node": "5.1.1"
+    "node": "5.1.1",
+    "npm": "3.3.12"
   },
   "author": {
     "name": "Bruce",
     "email": "brucetaylor88@gmx.com",
-    "url": ""
+    "url": "devpost.com/software/battlebets/"
   },
   "repository": {
     "type": "git",
@@ -51,5 +53,8 @@
   "dependencies": {
     "express": "^3.21.2",
     "grunt": "^0.4.5"
+  },
+  "scripts": {
+    "start": "node server/server.js"
   }
 }
