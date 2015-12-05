@@ -3,11 +3,9 @@
  */
 
 var express = require('require');
-var logger = require('morgan');
 var app = express();
 
 // log requests
-app.use(logger('dev'));
 
 // express on its own has no notion
 // of a "file". The express.static()
