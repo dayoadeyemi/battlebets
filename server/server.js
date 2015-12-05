@@ -10,9 +10,9 @@ var express = require("express"),
 // ====================
 server.configure(function() {
   console.log("Starting up");
-  console.log(process.cwd());
+  console.log(process.cwd() + "/public/");
   console.log(__dirname);
-  server.use(express["static"](process.cwd() + "/public"));
+  server.use(express["static"](process.cwd() + "/public/"));
 
 
 
