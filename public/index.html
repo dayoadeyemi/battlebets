@@ -1,169 +1,179 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ui-mobile-rendering" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ui-mobile-rendering" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9 ui-mobile-rendering" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js ui-mobile-rendering" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/i/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Backbone-Require Boilerplate</title>
-  <meta name="description" content="Backbone.js and Require.js Boilerplate Library">
+    <title>Battlebets - eSports Gambling</title>
 
-  <!-- Mobile viewport optimized: h5bp.com/viewport -->
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <!--Detect if the browser is a mobile browser or a desktop browser and conditionally include your JavaScript --> 
-  <script>
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
 
-      // Mobile/Desktop Detection script
-      (function(ua, w, d, undefined) {
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-        // App Environment
-        // ---------------
-        //  Tip: Set to true to turn on "production" mode
-        var production = false,
-          filesToLoad,
-          //BoilerplateMVC Helper Methods
-          boilerplateMVC = {
-            loadCSS: function(url, callback) {
-              var link = d.createElement("link");
-              link.type = "text/css";
-              link.rel = "stylesheet";
-              link.href = url;
-              d.getElementsByTagName("head")[0].appendChild(link);
-              if(callback) {
-                callback();
-              }
-            },
-            loadJS: function(file, callback) {
-              var script = d.createElement("script");
-              script.type = "text/javascript";
-              if (script.readyState) {  // IE
-                script.onreadystatechange = function() {
-                  if (script.readyState == "loaded" || script.readyState == "complete") {
-                    script.onreadystatechange = null;
-                    callback();
-                  }
-                };
-              } else {  // Other Browsers
-                script.onload = function() {
-                  callback();
-                };
-              }
-              if(((typeof file).toLowerCase()) === "object" && file["data-main"] !== undefined) {
-                script.setAttribute("data-main", file["data-main"]);
-                script.async = true;
-                script.src = file.src;
-              } else {
-                script.src = file;
-              }
-              d.getElementsByTagName("head")[0].appendChild(script);
-            },
-            loadFiles: function(production, obj, callback) {
-              var self = this;
-              if(production) {
-                // Loads the production CSS file(s)
-                self.loadCSS(obj["prod-css"], function() {
-                  // If there are production JavaScript files to load
-                  if(obj["prod-js"]) {
-                    // Loads the correct initialization file (which includes Almond.js)
-                    self.loadJS(obj["prod-js"], callback);
-                  }
-                });
-              } else {
-                // Loads the development CSS file(s)
-                self.loadCSS(obj["dev-css"], function() {
-                  // If there are development Javascript files to load
-                  if(obj["dev-js"]) {
-                    // Loads Require.js and tells Require.js to find the correct intialization file
-                    self.loadJS(obj["dev-js"], callback);
-                  }
-                });
-              }
-            }
-          };
-
-          // Mobile/Tablet Logic
-          if((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(ua)) {
-
-            // Mobile/Tablet CSS and JavaScript files to load
-            filesToLoad = {
-              // CSS file that is loaded when in development mode
-              "dev-css": "css/mobile.css",
-              // CSS file that is loaded when in production mode
-              "prod-css": "css/mobile.min.css",
-              // Require.js configuration file that is loaded when in development mode
-              "dev-js": { "data-main": "js/app/config/config.js", "src": "js/libs/require.js" },
-              // JavaScript initialization file that is also loaded when in development mode
-              "dev-init": "js/app/init/MobileInit.js",
-              // JavaScript file that is loaded when in production mode
-              "prod-js": "js/app/init/MobileInit.min.js",
-            };
-
-          }
-
-          // Desktop Logic
-          else {
-
-            // Desktop CSS and JavaScript files to load
-            filesToLoad = {
-              // CSS file that is loaded when in development mode
-              "dev-css": "css/desktop.css",
-              // CSS file that is loaded when in production mode
-              "prod-css": "css/desktop.min.css",
-              // Require.js configuration file that is also loaded when in development mode
-              "dev-js": { "data-main": "js/app/config/config.js", "src": "js/libs/require.js" },
-              // JavaScript initialization file that is loaded when in development mode
-              "dev-init": "js/app/init/DesktopInit.js",
-              // JavaScript file that is loaded when in production mode
-              "prod-js": "js/app/init/DesktopInit.min.js"
-            };
-
-          }
-
-          boilerplateMVC.loadFiles(production, filesToLoad, function() {
-            if(!production && window.require) {
-              require([filesToLoad["dev-init"]]);
-            }
-          });
-
-      })(navigator.userAgent || navigator.vendor || window.opera, window, document);
-
-  </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
+
 <body>
 
-  <div data-role="page">
-
-    <header data-role="header" class="navbar nav navbar-inner">
-      <h1>Backbone-Require-Boilerplate (BRB)</h1>
-    </header> <!-- /header -->
-
-    <div class="container-fluid" data-role="content">
-  
-      <div class="row-fluid">
-      
-        <div class="span12">
-
-          <div class="example"></div>
-      
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">BattleBets</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container -->
+    </nav>
 
-      </div>
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>BattleBets Landing Page</h1>
+                        <h3>A London Tech Crunch Hack</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="http://devpost.com/software/battlebets" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Devpost</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/bat26/battlebets" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Source</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
 
     </div>
+    <!-- /.intro-header -->
 
-    <footer class="footer navbar navbar-fixed-bottom" data-role="footer">
-        <p>Written by <a href="https://github.com/gfranko" target="_blank">Greg Franko</a></p>
-    </footer><!-- /footer -->
+    <!-- Page Content -->
 
-  </div> <!-- /page -->
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
+                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/ipad.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
+                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/phones.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Gamebling</h2>
+                </div>
+                <div class="col-lg-6">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small">Copyright BattleBets, no scrubs inc.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
