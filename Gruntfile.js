@@ -69,7 +69,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    start: "server/server.js",
     jshint: {
       files: ['Gruntfile.js', 'public/js/app/**/*.js', '!public/js/app/**/*min.js'],
       options: {
