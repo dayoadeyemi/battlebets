@@ -7,7 +7,7 @@ var express = require("express"),
 
 // SERVER CONFIGURATION
 // ====================
-server.use(function() {
+server.configure(function() {
 
   server.use(express["static"](__dirname + "/../public"));
 
