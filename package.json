@@ -50,6 +50,7 @@
     "webdriverjs": "~0.7.9"
   },
   "scripts": {
+    "postinstall": "grunt",
     "start": "node server.js"
   }
 }
