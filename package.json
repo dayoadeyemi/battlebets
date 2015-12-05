@@ -1,8 +1,11 @@
 {
   "name": "Battlebets",
   "title": "Battlebets",
-  "version": "5.1.1",
+  "version": "0.0.1",
   "homepage": "",
+  "engines": {
+    "node": "5.1.1"
+  },
   "author": {
     "name": "Bruce",
     "email": "brucetaylor88@gmx.com",
