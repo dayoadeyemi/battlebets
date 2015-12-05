@@ -8,9 +8,12 @@ var express = require("express"),
 // SERVER CONFIGURATION
 // ====================
 server.configure(function() {
+  console.log("Starting up");
+  console.log(__dirname);
+  server.use(express["static"](__dirname + "/../public"));
 
-  server.use(express["static"](__dirname + "../public/"));
-  console.log("Directory name : " + __dirname);
+
+
   server.use(express.errorHandler({
 
     dumpExceptions: true,
