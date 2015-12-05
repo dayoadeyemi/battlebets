@@ -2,7 +2,7 @@
 // ============
 var express = require("express"),
     http = require("http"),
-    port = (process.env.PORT || 80),
+    port = (process.env.PORT || 8080),
     server = module.exports = express();
 
 // SERVER CONFIGURATION
@@ -31,4 +31,4 @@ server.configure(function() {
 // Start Node.js Server
 http.createServer(server).listen(port);
 
-console.log('Welcome to Backbone-Require-Boilerplate!\n\nPlease go to http://localhost:' + port + ' to start using Require.js and Backbone.js');
+console.log('Welcome to Battlebets!\n\nPlease go to http://localhost:' + port + ' to start using Require.js and Backbone.js');
