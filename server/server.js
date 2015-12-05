@@ -1,39 +1,36 @@
-// DEPENDENCIES
-// ============
-var express = require("express"),
-    path = require("path"),
-    http = require("http"),
-    port = (process.env.PORT || 1251),
-    server = module.exports = express();
+/**
+ * Module dependencies.
+ */
 
-// SERVER CONFIGURATION
-// ====================
-server.configure(function() {
-  console.log("Starting up");
-  console.log(process.cwd() + "/public/");
-  console.log(__dirname);
-  server.use(express["static"](process.cwd() + "/public/"));
+var express = require('require');
+var logger = require('morgan');
+var app = express();
 
+// log requests
+app.use(logger('dev'));
 
+// express on its own has no notion
+// of a "file". The express.static()
+// middleware checks for a file matching
+// the `req.path` within the directory
+// that you pass it. In this case "GET /js/app.js"
+// will look for "./public/js/app.js".
 
-  server.use(express.errorHandler({
+app.use(express.static(__dirname + '/public'));
 
-    dumpExceptions: true,
+// if you wanted to "prefix" you may use
+// the mounting feature of Connect, for example
+// "GET /static/js/app.js" instead of "GET /js/app.js".
+// The mount-path "/static" is simply removed before
+// passing control to the express.static() middleware,
+// thus it serves the file correctly by ignoring "/static"
+app.use('/static', express.static(__dirname + '/public'));
 
-    showStack: true
+// if for some reason you want to serve files from
+// several directories, you can use express.static()
+// multiple times! Here we're passing "./public/css",
+// this will allow "GET /style.css" instead of "GET /css/style.css":
+app.use(express.static(__dirname + '/public/css'));
 
-  }));
-
-  server.use(express.bodyParser())
-
-  server.use(server.router);
-
-});
-
-// SERVER
-// ======
-
-// Start Node.js Server
-http.createServer(server).listen(port);
-
-console.log('Welcome to Battlebets!\n\nPlease go to http://localhost:' + port + ' to start using Require.js and Backbone.js');
+app.listen(1251);
+console.log('Booted up');
