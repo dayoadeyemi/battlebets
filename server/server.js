@@ -1,6 +1,7 @@
 // DEPENDENCIES
 // ============
 var express = require("express"),
+    path = require("path"),
     http = require("http"),
     port = (process.env.PORT || 1251),
     __dirname = path.resolve(path.dirname()),
