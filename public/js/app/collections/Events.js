@@ -1,8 +1,8 @@
 // Collection.js
 // -------------
-define(["jquery","backbone","models/Event"],
+define(["jquery","backbone","models/Event", "text!json/events.json"],
 
-  function($, Backbone, Model) {
+  function($, Backbone, Model, JSON) {
       console.log("Starting Events collection");
 
       // Creates a new Backbone Collection class object

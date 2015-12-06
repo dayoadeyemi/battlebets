@@ -1,0 +1,89 @@
+[
+  {
+    "id": "2180718",
+    "name": "Titans vs Jokers",
+    "venue": "",
+    "status": "A",
+    "date": "2015-12-05",
+    "time": "21:00:00",
+    "sort": "MTCH",
+    "channels": "IPLYFBJSCMTHQZVGNAE",
+    "betting": {
+      "untilDate": "2015-12-05",
+      "untilTime": "21:00:00",
+      "status": "OFF"
+    },
+    "availability": {
+      "inPlay": "Y",
+      "livePrices": "Y"
+    },
+    "inPlay": {
+      "started": "Y"
+    },
+    "url": "http://sports.williamhill-test.local/bet_gib/en-gb/betting/e/4739/",
+    "raceNum": "",
+    "displayed": "Y",
+    "displayOrder": "0",
+    "lastUpdateDate": "2015-12-05",
+    "lastUpdateTime": "18:07:21",
+    "twitchUrl": "http://www.twitch.tv/joindotared"
+  },
+  {
+    "id": "2180729",
+    "name": "lemondogs vs team liquid",
+    "venue": "",
+    "status": "A",
+    "date": "2015-12-06",
+    "time": "08:00:00",
+    "sort": "MTCH",
+    "channels": "IPLYFBJSCMTHQZVGNAE",
+    "betting": {
+      "untilDate": "2015-12-06",
+      "untilTime": "08:00:00",
+      "status": "PRICED"
+    },
+    "availability": {
+      "inPlay": "Y",
+      "livePrices": "Y"
+    },
+    "inPlay": {
+      "started": "N"
+    },
+    "url": "http://sports.williamhill-test.local/bet_gib/en-gb/betting/e/4739/",
+    "raceNum": "",
+    "displayed": "Y",
+    "displayOrder": "0",
+    "lastUpdateDate": "2015-12-05",
+    "lastUpdateTime": "21:25:29",
+    "twitchUrl": "http://www.twitch.tv/joindotared"
+  },
+  {
+    "id": "2180731",
+    "name": "Bulldogs vs Apache",
+    "venue": "",
+    "status": "A",
+    "date": "2015-12-06",
+    "time": "10:00:00",
+    "sort": "MTCH",
+    "channels": "IPLYFBJSCMTHQZVGNAE",
+    "betting": {
+      "untilDate": "2015-12-06",
+      "untilTime": "10:00:00",
+      "status": "PRICED"
+    },
+    "availability": {
+      "inPlay": "Y",
+      "livePrices": "Y"
+    },
+    "inPlay": {
+      "started": "N"
+    },
+    "url": "http://sports.williamhill-test.local/bet_gib/en-gb/betting/e/4739/",
+    "raceNum": "",
+    "displayed": "Y",
+    "displayOrder": "0",
+    "lastUpdateDate": "2015-12-05",
+    "lastUpdateTime": "21:31:47",
+    "twitchUrl": "http://www.twitch.tv/joindotared"
+  }
+]

@@ -11,8 +11,8 @@ define(["jquery", "backbone", "text!templates/eventssection.html"],
             collection : null,
 
             // View constructor
-            initialize: function(options) {
-                this.collection = options;
+            initialize: function() {
+                console.log(this.collection);
                 // Calls the view's render method
                 this.render();
 

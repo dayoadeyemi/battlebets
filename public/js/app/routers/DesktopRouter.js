@@ -24,13 +24,12 @@ define(["jquery", "backbone", "models/Model", "views/View", "views/Betting", "vi
             },
 
             index: function() {
-                this.events.fetch().then( function(resp) {// fetch client collection from db
-                    // renders twitch iframe
-                    new View({collection: resp.data});
-                    new EventsView({collection: resp.data});
-                    new Betting({collection: resp.data });
+                this.events.fetch({reset: true});
+                this.events.bind('reset', function(events){
+                    new View({collection: events});
+                    new EventsView({collection: events});
+                    new Betting({collection: events });
                 });
-
             }
 
         });
