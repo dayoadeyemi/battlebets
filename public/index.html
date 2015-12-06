@@ -47,14 +47,25 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
+                <div class="eventLogin pull-right">
+                    <!-- HTML Template -->
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only" for="username">Email address</label>
+                            <input type="input" class="form-control" id="username" placeholder="Your William Hill account email">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="William Hill account password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                        <button type="submit" id="login" class="submitButton btn btn-info">Sign in</button>
+                    </form>
+                </div>
             </div>
             <!-- /.navbar-collapse -->
         </div>
