@@ -1,18 +1,18 @@
 // View.js
 // -------
-define(["jquery", "backbone", "text!templates/eventssection.html"],
+define(["jquery", "backbone", "models/Model", "text!templates/chat.html"],
 
-    function($, Backbone, template){
-        console.log("Init Events View");
-        var EventsView = Backbone.View.extend({
+    function($, Backbone, Model, template){
+        console.log("Init View")
+        var Chat = Backbone.View.extend({
 
             // The DOM Element associated with this view
-            el: ".eventSection",
-            collection : null,
+            el: ".eventChat",
+
 
             // View constructor
             initialize: function() {
-                console.log(this.collection);
+
                 // Calls the view's render method
                 this.render();
 
@@ -26,11 +26,10 @@ define(["jquery", "backbone", "text!templates/eventssection.html"],
             // Renders the view's template to the UI
             render: function() {
                 // Setting the view's template property using the Underscore template method
-
-                this.template = _.template(template, {models : this.collection.models});
+                this.template = _.template(template, {});
 
                 // Dynamically updates the UI with the view's template
-                this.$el.append(this.template);
+                this.$el.html(this.template);
 
                 // Maintains chainability
                 return this;
@@ -40,7 +39,7 @@ define(["jquery", "backbone", "text!templates/eventssection.html"],
         });
 
         // Returns the View class
-        return EventsView;
+        return Chat;
 
     }
 

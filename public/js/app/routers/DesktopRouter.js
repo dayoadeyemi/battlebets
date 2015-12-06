@@ -1,8 +1,8 @@
 // DesktopRouter.js
 // ----------------
-define(["jquery", "backbone", "models/Model", "views/View", "views/Betting", "views/EventsView", "collections/Events"],
+define(["jquery", "backbone", "models/Model", "views/View", "views/Betting", "views/EventsView", "collections/Events", "views/Chat"],
 
-    function($, Backbone, Model, View, Betting, EventsView, Collection) {
+    function($, Backbone, Model, View, Betting, EventsView, Collection, Chat) {
 
         var DesktopRouter = Backbone.Router.extend({
 
@@ -24,9 +24,12 @@ define(["jquery", "backbone", "models/Model", "views/View", "views/Betting", "vi
             },
 
             index: function() {
+
+                new View({});
+
+                new Chat();
                 this.events.fetch({reset: true});
                 this.events.bind('reset', function(events){
-                    new View({collection: events});
                     new EventsView({collection: events});
                     new Betting({collection: events });
                 });
