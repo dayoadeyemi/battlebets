@@ -27,7 +27,7 @@ define(["jquery", "backbone", "models/Model", "text!templates/chat.html"],
             // Renders the view's template to the UI
             render: function() {
 
-                var chatHeight = $(window).height() - 50
+                var chatHeight = $(window).height() - 67
                 // Setting the view's template property using the Underscore template method
                 this.template = _.template(template, {'chatHeight': chatHeight});
 
