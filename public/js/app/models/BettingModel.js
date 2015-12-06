@@ -5,17 +5,12 @@ define(["jquery", "backbone"],
     function($, Backbone) {
 
         // Creates a new Backbone Model class object
-        var Model = Backbone.Model.extend({
-
-
-            url : "https://cece9dca.ngrok.io/events",
+        var BettingModel = Backbone.Model.extend({
 
             // Model Constructor
             initialize: function() {
-                this.fetch
+
             },
-
-
 
             // Default values for all of the Model attributes
             defaults: {
@@ -30,7 +25,7 @@ define(["jquery", "backbone"],
         });
 
         // Returns the Model class
-        return Model;
+        return BettingModel;
 
     }
 

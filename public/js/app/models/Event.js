@@ -5,14 +5,14 @@ define(["jquery", "backbone"],
     function($, Backbone) {
 
         // Creates a new Backbone Model class object
-        var Model = Backbone.Model.extend({
+        var Event = Backbone.Model.extend({
 
 
             url : "https://cece9dca.ngrok.io/events",
 
             // Model Constructor
             initialize: function() {
-                this.fetch
+
             },
 
 
@@ -30,7 +30,7 @@ define(["jquery", "backbone"],
         });
 
         // Returns the Model class
-        return Model;
+        return Event;
 
     }
 

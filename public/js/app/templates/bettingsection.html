@@ -1,0 +1,35 @@
+
+<h2>Place your bet</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <p>
+            <label for="amount">Wager amount (£1 increments):</label>
+            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+
+        <div id="slider"></div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2">
+            <button class="btn btn-info btn-lg">Team 1</button>
+            <div class="winnings">
+                <label for="input" title="Potential Winnings">
+                    Payout
+                </label>
+                <input id="winnings1" value="">
+            </div>
+        </div>
+
+        <div class="col-sm-2 pull-right">
+            <button class="btn btn-warning btn-lg">Team 2</button>
+            <div class="winnings">
+                <label for="input" title="Potential Winnings">
+                    Payout
+                </label>
+                <input id="winnings2" value="">
+
+            </div>
+        </div>
+    </div>
+</form>

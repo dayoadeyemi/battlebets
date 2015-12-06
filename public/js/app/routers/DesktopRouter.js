@@ -1,8 +1,8 @@
 // DesktopRouter.js
 // ----------------
-define(["jquery", "backbone", "models/Model", "views/View", "collections/Collection"],
+define(["jquery", "backbone", "models/Model", "views/View", "views/Betting", "views/EventsView", "collections/Events"],
 
-    function($, Backbone, Model, View, Collection) {
+    function($, Backbone, Model, View, Betting, EventsView, Collection) {
 
         var DesktopRouter = Backbone.Router.extend({
 
@@ -13,6 +13,8 @@ define(["jquery", "backbone", "models/Model", "views/View", "collections/Collect
 
             },
 
+            events : new Collection(),
+
             // All of your Backbone Routes (add more)
             routes: {
 
@@ -22,9 +24,12 @@ define(["jquery", "backbone", "models/Model", "views/View", "collections/Collect
             },
 
             index: function() {
-
-                // Instantiates a new view which will render the header text to the page
-                new View();
+                this.events.fetch().then( function(resp) {// fetch client collection from db
+                    // renders twitch iframe
+                    new View({collection: resp.data});
+                    new EventsView({collection: resp.data});
+                    new Betting({collection: resp.data });
+                });
 
             }
 
