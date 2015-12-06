@@ -5,7 +5,7 @@
             <h3 class="panel-title"><%= event.attributes.name %></h3>
         </div>
         <div class="panel-body">
-            <span><%= event.attributes.date %></span><span class="pull-right"></span> <%= event.attributes.time %></span>
+            <%= event.attributes.time %> <span class="pull-right"><%= event.attributes.date %></span>
         </div>
 </div>
 <% }); %>
